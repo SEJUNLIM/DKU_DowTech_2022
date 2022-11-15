@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dku_dow_dpp"
         tools:targetApi="31">
+        <activity android:name=".MycouponActivity"></activity>
+        <activity android:name=".BuyCouponActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
