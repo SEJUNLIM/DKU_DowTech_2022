@@ -130,6 +130,7 @@
         android:layout_marginTop="30dp">
 
         <android.widget.Button
+            android:id="@+id/profile_change"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="  프로필 변경"
@@ -149,6 +150,7 @@
         android:layout_marginTop="1dp">
 
         <android.widget.Button
+            android:id="@+id/pw_change"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="  비밀번호 변경"
@@ -168,6 +170,7 @@
         android:layout_marginTop="1dp">
 
         <android.widget.Button
+            android:id="@+id/coupon_used_list"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="  쿠폰 사용 내역"
@@ -187,6 +190,7 @@
         android:layout_marginTop="1dp">
 
         <android.widget.Button
+            android:id="@+id/point_charge"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="  포인트 충전하기"
@@ -206,6 +210,7 @@
         android:layout_marginTop="1dp">
 
         <android.widget.Button
+            android:id="@+id/app_settings"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="  애플리케이션 설정"
@@ -239,6 +244,7 @@
         android:layout_marginTop="20dp">
 
         <android.widget.Button
+            android:id="@+id/account_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="계정 탈퇴"
