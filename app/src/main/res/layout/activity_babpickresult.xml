@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="해당 식당 쿠폰 보유자 목록 입니다"
+                android:text="밥 친구가 매칭 되었습니다"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
@@ -164,6 +164,7 @@
         android:layout_weight="1">
 
         <android.widget.Button
+            android:id="@+id/return_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="0dp"

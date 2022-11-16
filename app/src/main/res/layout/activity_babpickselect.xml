@@ -84,8 +84,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
@@ -94,14 +92,13 @@
                 android:textColor="@color/black"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
+
                 android:text="이름" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
@@ -112,7 +109,7 @@
                 android:text="시간" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingLeft="20dp"
@@ -121,19 +118,25 @@
                 android:textSize="15sp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:textColor="@color/black"
                 android:layout_marginRight="30dp"
                 android:text="         " />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:background="#808080"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_weight="1">
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -142,14 +145,14 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="최수민" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -158,18 +161,19 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="12:30am" />
 
             <android.widget.Button
-                android:layout_width="wrap_content"
+                android:id="@+id/second_btn"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:background="@color/main"
                 android:textColor="@color/white"
                 android:layout_marginRight="30dp"
@@ -184,7 +188,7 @@
             android:layout_gravity="center"
             android:layout_weight="1">
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -193,14 +197,14 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="최수민" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -209,18 +213,18 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="12:30am" />
 
             <android.widget.Button
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:background="@color/main"
                 android:textColor="@color/white"
                 android:layout_marginRight="30dp"
@@ -234,7 +238,7 @@
             android:layout_gravity="center"
             android:layout_weight="1">
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -243,14 +247,14 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="최수민" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -259,18 +263,18 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="12:30am" />
 
             <android.widget.Button
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:background="@color/main"
                 android:textColor="@color/white"
                 android:layout_marginRight="30dp"
@@ -284,7 +288,7 @@
             android:layout_gravity="center"
             android:layout_weight="1">
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -293,14 +297,14 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="최수민" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -309,24 +313,23 @@
                 android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginRight="20dp"
+                android:enabled="false"
                 android:text="12:30am" />
 
             <android.widget.Button
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:background="@color/main"
                 android:textColor="@color/white"
                 android:layout_marginRight="30dp"
                 android:padding="10dp"
                 android:text="매칭" />
-
         </LinearLayout>
 
     </LinearLayout>

@@ -90,24 +90,22 @@
             android:layout_gravity="center"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:enabled="false"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="80dp"
                 android:text="스타벅스" />
 
             <android.widget.Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
                 android:layout_gravity="center"
@@ -126,24 +124,23 @@
             android:layout_gravity="center"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textAlignment="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
-                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textColor="@color/black"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="80dp"
+                android:enabled="false"
                 android:text="맘스터치" />
 
             <android.widget.Button
-                android:layout_width="wrap_content"
+                android:id="@+id/first_btn"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
                 android:layout_gravity="center"
@@ -163,33 +160,31 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="80dp"
-                android:layout_weight="1"
-                android:background="#0a559c"
                 android:paddingLeft="20dp"
-                android:paddingTop="10dp"
                 android:paddingRight="20dp"
+                android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:text="천향마라탕"
-                android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:enabled="false"
+                android:text="천향마라탕" />
 
             <android.widget.Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:minHeight="0dp"
                 android:layout_gravity="center"
-                android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="@color/main"
-                android:minHeight="0dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="30dp"
                 android:padding="10dp"
-                android:text="매칭"
-                android:textColor="@color/white" />
+                android:text="매칭" />
 
         </LinearLayout>
     <LinearLayout
