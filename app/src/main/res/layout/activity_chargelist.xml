@@ -50,6 +50,7 @@
         android:layout_marginTop="30dp">
 
         <android.widget.Button
+            android:id="@+id/point_charge"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="포인트 충전"
@@ -62,6 +63,7 @@
             android:background="#8e8e8e"/>
 
         <android.widget.Button
+            android:id="@+id/charge_list"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="충전 내역"
@@ -78,6 +80,7 @@
         android:layout_marginTop="2dp">
 
         <android.widget.Button
+            android:id="@+id/one_month"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:text="1개월"
@@ -90,6 +93,7 @@
             android:background="#8e8e8e"/>
 
         <android.widget.Button
+            android:id="@+id/three_month"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:text="3개월"
@@ -102,6 +106,7 @@
             android:background="#8e8e8e"/>
 
         <android.widget.Button
+            android:id="@+id/six_month"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:text="6개월"
@@ -114,6 +119,7 @@
             android:background="#8e8e8e"/>
 
         <android.widget.Button
+            android:id="@+id/one_year"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:text="1년"
@@ -186,6 +192,7 @@
         android:layout_marginTop="190dp">
 
         <android.widget.Button
+            android:id="@+id/page"
             android:layout_width="30dp"
             android:layout_height="40dp"
             android:text="1"

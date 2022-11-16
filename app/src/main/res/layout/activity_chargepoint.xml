@@ -50,6 +50,7 @@
         android:layout_marginTop="30dp">
 
         <android.widget.Button
+            android:id="@+id/point_charge"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="포인트 충전"
@@ -62,6 +63,7 @@
             android:background="#8e8e8e"/>
 
         <android.widget.Button
+            android:id="@+id/charge_list"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="충전 내역"
@@ -88,6 +90,7 @@
             android:gravity="start"/>
 
         <android.widget.Button
+            android:id="@+id/five_thousands"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="₩5000"
@@ -114,6 +117,7 @@
             android:gravity="start"/>
 
         <android.widget.Button
+            android:id="@+id/ten_thousands"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="₩10000"
@@ -140,6 +144,7 @@
             android:gravity="start"/>
 
         <android.widget.Button
+            android:id="@+id/twenty_thousands"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="₩20000"
@@ -166,6 +171,7 @@
             android:gravity="start"/>
 
         <android.widget.Button
+            android:id="@+id/thirty_thousands"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="₩30000"
@@ -192,6 +198,7 @@
             android:gravity="start"/>
 
         <android.widget.Button
+            android:id="@+id/fifty_thousands"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="₩50000"
@@ -208,6 +215,7 @@
         android:layout_marginTop="40dp">
 
         <android.widget.Button
+            android:id="@+id/user_input"
             android:layout_width="190dp"
             android:layout_height="40dp"
             android:layout_marginStart="100dp"
