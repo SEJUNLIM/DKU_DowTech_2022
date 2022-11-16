@@ -50,7 +50,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:orientation="vertical"
         >
@@ -58,14 +58,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01"
             android:orientation="vertical"
             android:background="#0a559c"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="밥 친구가 매칭 되었습니다"
+                android:text="밥 친구가 연결 되었습니다"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
@@ -83,7 +82,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textAlignment="center"
                 android:paddingTop="10dp"
@@ -93,9 +91,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
                 android:textSize="20sp"
-                android:text="현재 매칭 대상 :" />
+                android:text="연결된 밥 친구  :" />
 
             <TextView
+                android:id="@+id/nametext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -108,7 +107,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:layout_marginRight="30dp"
-                android:text="최수민" />
+                android:text="" />
 
         </LinearLayout>
 
@@ -122,7 +121,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textAlignment="center"
                 android:paddingTop="10dp"
@@ -135,6 +133,7 @@
                 android:text="밥 약속 시간 : " />
 
             <TextView
+                android:id="@+id/timetext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -147,7 +146,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/black"
                 android:layout_marginRight="30dp"
-                android:text="12:30AM" />
+                android:text="" />
 
         </LinearLayout>
 
@@ -173,7 +172,7 @@
             android:background="@color/main"
             android:textColor="@color/white"
             android:padding="10dp"
-            android:text="취소하고 대기차 현황으로 돌아가기" />
+            android:text="밥 친구 취소하기" />
 
     </LinearLayout>
     <LinearLayout

@@ -50,7 +50,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="3"
         android:orientation="vertical"
         >
@@ -58,14 +58,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01"
             android:orientation="vertical"
             android:background="#0a559c"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="해당 식당 매칭 희망자 목록 입니다"
+                android:text="해당 식당 쿠폰 보유자 목록"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
@@ -134,9 +133,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:id="@+id/layout1">
 
             <EditText
+                android:id="@+id/getname1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -153,6 +154,7 @@
                 android:text="최수민" />
 
             <EditText
+                android:id="@+id/gettime1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -168,7 +170,7 @@
                 android:text="12:30am" />
 
             <android.widget.Button
-                android:id="@+id/second_btn"
+                android:id="@+id/firstsend"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
@@ -186,9 +188,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:id="@+id/layout2">>
 
             <EditText
+                android:id="@+id/getname2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -202,9 +206,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
                 android:enabled="false"
-                android:text="최수민" />
+                android:text="임세준" />
 
             <EditText
+                android:id="@+id/gettime2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -217,9 +222,10 @@
                 android:textColor="@color/black"
                 android:layout_marginRight="20dp"
                 android:enabled="false"
-                android:text="12:30am" />
+                android:text="1:00am" />
 
             <android.widget.Button
+                android:id="@+id/secondsend"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
@@ -236,9 +242,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:id="@+id/layout3">>
 
             <EditText
+                android:id="@+id/getname3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -252,9 +260,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
                 android:enabled="false"
-                android:text="최수민" />
+                android:text="주영운" />
 
             <EditText
+                android:id="@+id/gettime3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -267,9 +276,10 @@
                 android:textColor="@color/black"
                 android:layout_marginRight="20dp"
                 android:enabled="false"
-                android:text="12:30am" />
+                android:text="6:30am" />
 
             <android.widget.Button
+                android:id="@+id/thirdsend"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
@@ -286,9 +296,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:id="@+id/layout4">>
 
             <EditText
+                android:id="@+id/getname4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -302,9 +314,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
                 android:enabled="false"
-                android:text="최수민" />
+                android:text="윤우준" />
 
             <EditText
+                android:id="@+id/gettime4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -317,9 +330,10 @@
                 android:textColor="@color/black"
                 android:layout_marginRight="20dp"
                 android:enabled="false"
-                android:text="12:30am" />
+                android:text="5:30am" />
 
             <android.widget.Button
+                android:id="@+id/fourthsend"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:minHeight="0dp"
