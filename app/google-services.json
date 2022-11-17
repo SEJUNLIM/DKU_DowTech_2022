@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "84793686427",
+    "project_id": "cannonpon",
+    "storage_bucket": "cannonpon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84793686427:android:3c878fae8a200654cdc93e",
+        "android_client_info": {
+          "package_name": "com.example.dku_dow_dpp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84793686427-b5r7bhh8kb42vem6d9fprhgllug1bd4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4w2dp0KJQ9vbOjh-4NCXxu_U3-AFDNNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84793686427-b5r7bhh8kb42vem6d9fprhgllug1bd4r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

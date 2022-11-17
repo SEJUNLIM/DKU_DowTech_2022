@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        android:orientation="horizontal"
+        >
+
+        <android.widget.ImageButton
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/main"
+            android:contentDescription="@string/bottom_sheet_behavior"
+            android:padding="10dp"
+            android:src="@drawable/back_arrow_resize"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="대포폰"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/notButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0a559c"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="해당 식당 쿠폰 보유자 목록"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+
+                android:text="이름" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="15sp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"
+                android:text="시간" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="0"
+                android:textColor="@color/black"
+                android:layout_marginRight="30dp"
+                android:text="         " />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:background="#808080"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/layout1">
+
+            <EditText
+                android:id="@+id/getname1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="최수민" />
+
+            <EditText
+                android:id="@+id/gettime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="12:30am" />
+
+            <android.widget.Button
+                android:id="@+id/firstsend"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:background="@color/main"
+                android:textColor="@color/white"
+                android:layout_marginRight="30dp"
+                android:padding="10dp"
+                android:text="매칭" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/layout2">>
+
+            <EditText
+                android:id="@+id/getname2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="임세준" />
+
+            <EditText
+                android:id="@+id/gettime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="1:00am" />
+
+            <android.widget.Button
+                android:id="@+id/secondsend"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:background="@color/main"
+                android:textColor="@color/white"
+                android:layout_marginRight="30dp"
+                android:padding="10dp"
+                android:text="매칭" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/layout3">>
+
+            <EditText
+                android:id="@+id/getname3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="주영운" />
+
+            <EditText
+                android:id="@+id/gettime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="6:30am" />
+
+            <android.widget.Button
+                android:id="@+id/thirdsend"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:background="@color/main"
+                android:textColor="@color/white"
+                android:layout_marginRight="30dp"
+                android:padding="10dp"
+                android:text="매칭" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/layout4">>
+
+            <EditText
+                android:id="@+id/getname4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="윤우준" />
+
+            <EditText
+                android:id="@+id/gettime4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="2"
+                android:textColor="@color/black"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="5:30am" />
+
+            <android.widget.Button
+                android:id="@+id/fourthsend"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:background="@color/main"
+                android:textColor="@color/white"
+                android:layout_marginRight="30dp"
+                android:padding="10dp"
+                android:text="매칭" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_weight="5">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:text="광고"
+
+            />
+
+    </LinearLayout>
+</LinearLayout>
