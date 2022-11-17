@@ -38,7 +38,7 @@ public class MyPageActivity extends AppCompatActivity {
         point_charge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPageActivity.this, PointChargeActivity.class);
+                Intent intent = new Intent(MyPageActivity.this, ChargePointActivity.class);
                 startActivity(intent);
             }
         });

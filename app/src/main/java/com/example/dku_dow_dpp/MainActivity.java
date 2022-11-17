@@ -5,12 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        setContentView(R.layout.activity_babpick);
     }
 
 
