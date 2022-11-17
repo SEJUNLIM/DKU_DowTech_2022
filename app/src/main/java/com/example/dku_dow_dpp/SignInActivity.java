@@ -9,15 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SignInActivity extends AppCompatActivity {
 
-    private Button sign_in, login;
+    Button sign_in, login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        sign_in = findViewById(R.id.sign_in);
-        login = findViewById(R.id.login);
+        sign_in = (Button)findViewById(R.id.sign_in);
+        login = (Button)findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
