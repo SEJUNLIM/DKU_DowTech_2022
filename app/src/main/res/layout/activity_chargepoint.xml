@@ -33,13 +33,17 @@
             android:textStyle="bold"
             android:textSize="30sp" />
 
-        <android.widget.Button
-            android:id="@+id/notButton"
+        <android.widget.ImageButton
+            android:id="@+id/my_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/main"
+            android:src="@drawable/user_20_resize"
+            android:layout_gravity="center"
+            android:padding="10dp"
             android:text="" />
+
     </LinearLayout>
 
     <LinearLayout

@@ -13,13 +13,14 @@ public class ChargeListActivity extends AppCompatActivity {
 
     private Button point_charge, charge_list, page;
     private Button oneMonth, threeMonth, sixMonth, year;
-    private ImageButton back_btn;
+    private ImageButton back_btn, my_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chargelist);
 
+        my_btn = findViewById(R.id.my_btn);
         point_charge = findViewById(R.id.point_charge);
         charge_list = findViewById(R.id.charge_list);
         back_btn = findViewById(R.id.button);
@@ -32,6 +33,15 @@ public class ChargeListActivity extends AppCompatActivity {
         charge_list.setPaintFlags(charge_list.getPaintFlags()|Paint.UNDERLINE_TEXT_FLAG);
         page.setPaintFlags(page.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
         oneMonth.setPaintFlags(oneMonth.getPaintFlags()|Paint.UNDERLINE_TEXT_FLAG);
+
+        my_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChargeListActivity.this, MyPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

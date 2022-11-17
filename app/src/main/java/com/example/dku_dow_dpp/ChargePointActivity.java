@@ -13,7 +13,7 @@ public class ChargePointActivity extends AppCompatActivity {
 
     private Button point_charge, charge_list, user_input;
     private Button five, ten, twenty, thirty, fifty;
-    private ImageButton back_btn;
+    private ImageButton back_btn, my_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,17 @@ public class ChargePointActivity extends AppCompatActivity {
         point_charge = findViewById(R.id.point_charge);
         charge_list = findViewById(R.id.charge_list);
         back_btn = findViewById(R.id.button);
+        my_btn = findViewById(R.id.my_btn);
 
         point_charge.setPaintFlags(point_charge.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        my_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChargePointActivity.this, MyPageActivity.class);
+                startActivity(intent);
+            }
+        });
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
