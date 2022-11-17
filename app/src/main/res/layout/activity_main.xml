@@ -36,13 +36,15 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <android.widget.Button
-            android:id="@+id/notButton"
+        <android.widget.ImageButton
+            android:id="@+id/my_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@color/main"
-            android:text="" />
+            android:padding="10dp"
+            android:src="@drawable/user_20_resize" />
     </LinearLayout>
 
 
