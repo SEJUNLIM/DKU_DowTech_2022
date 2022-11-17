@@ -7,6 +7,21 @@
     android:orientation="vertical">
     android:orientation="vertical"
     tools:context=".MainActivity">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        android:orientation="horizontal">
+
+        <android.widget.Button
+            android:id="@+id/notButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main"
+            android:text="" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,6 +54,50 @@
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="대포폰"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/notButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main"
+            android:text="" />
+    </LinearLayout>
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/babpick_title"-->
+    <!--        android:layout_width="178dp"-->
+    <!--        android:layout_height="547dp"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:background="#0a559c"-->
+    <!--        android:text="보유 쿠폰 식당"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="20sp"-->
+    <!--        android:textStyle="bold" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_weight="3">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보유 쿠폰 식당"
+            android:background="#0a559c"
+            android:textColor="@color/white"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="center"
             android:layout_gravity="center"
@@ -67,6 +126,7 @@
             android:layout_gravity="center"
             android:padding="10dp"
             android:text="" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -85,6 +145,10 @@
             android:layout_height="217dp"
             app:srcCompat="@android:drawable/ic_menu_mapmode" />
 
+            />
+
+    </LinearLayout>
+</LinearLayout>
         <TextView
             android:id="@+id/ad"
             android:layout_width="match_parent"
