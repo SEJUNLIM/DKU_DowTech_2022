@@ -67,7 +67,6 @@
             android:layout_gravity="center"
             android:padding="10dp"
             android:text="" />
-
     </LinearLayout>
 
     <LinearLayout

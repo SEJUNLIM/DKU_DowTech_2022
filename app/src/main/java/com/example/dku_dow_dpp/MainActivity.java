@@ -1,6 +1,8 @@
 package com.example.dku_dow_dpp;
 
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,4 +30,7 @@ public class MainActivity extends AppCompatActivity {
         });
         setContentView(R.layout.activity_babpick);
     }
+
+
+
 }
