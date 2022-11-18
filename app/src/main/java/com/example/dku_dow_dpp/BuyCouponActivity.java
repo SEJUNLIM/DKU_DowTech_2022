@@ -9,22 +9,32 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BuyCouponActivity  extends AppCompatActivity {
 
-    Button restaurant = findViewById(R.id.restaurant);
-    Button cafe = findViewById(R.id.cafe);
-    Button convenient = findViewById(R.id.convenient);
-    Button office = findViewById(R.id.office);
-    Button beauty = findViewById(R.id.beauty);
-    Button book = findViewById(R.id.book);
-    Button internet = findViewById(R.id.internetLecture);
-    Button culture = findViewById(R.id.culture);
-    ImageButton backBtn = findViewById(R.id.backButton);
-    Intent intent = new Intent(BuyCouponActivity.this,CouponListActivity.class);
+    Button restaurant;
+    Button cafe;
+    Button convenient;
+    Button office;
+    Button beauty;
+    Button book;
+    Button internet;
+    Button culture;
+    ImageButton backBtn;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mycoupon);
+        setContentView(R.layout.activity_buy_coupon);
+        restaurant = findViewById(R.id.restaurant);
+        cafe = findViewById(R.id.cafe);
+        convenient = findViewById(R.id.convenient);
+        office = findViewById(R.id.office);
+        beauty = findViewById(R.id.beauty);
+        book = findViewById(R.id.book);
+        internet = findViewById(R.id.internetLecture);
+        culture = findViewById(R.id.culture);
+        intent = new Intent(BuyCouponActivity.this,CouponListActivity.class);
 
+        backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(view -> onBackPressed());
         restaurant.setOnClickListener(view -> {
             categoryClick(0);

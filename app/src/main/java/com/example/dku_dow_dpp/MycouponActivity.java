@@ -7,7 +7,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MycouponActivity  extends AppCompatActivity {
+public class MycouponActivity extends AppCompatActivity {
 
     Button buyCoupon;
     ImageButton backBtn;
