@@ -67,7 +67,7 @@ public class Babpickresult2Activity extends AppCompatActivity {
         returnbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Babpickresult2Activity.this, BabpickActivity.class);
+                Intent intent = new Intent(Babpickresult2Activity.this, MainActivity.class);
 
                 try
                 {

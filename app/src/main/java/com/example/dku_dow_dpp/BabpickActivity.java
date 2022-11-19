@@ -48,7 +48,7 @@ public class BabpickActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        LinearLayout ll = (LinearLayout) findViewById(R.id.tlqkf1);
+        LinearLayout ll = (LinearLayout) findViewById(R.id.mainlayout);
         CollectionReference productRef = db.collection("user").document("lim").collection("coupon");
 
         productRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

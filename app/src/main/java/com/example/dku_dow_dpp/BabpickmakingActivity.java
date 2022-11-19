@@ -75,9 +75,6 @@ public class BabpickmakingActivity extends AppCompatActivity {
         makingbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                String myroom_id="";
                 String hour = "";
                 String min = "";
                 mTimePicker = (TimePicker) findViewById(R.id.selecttime);
