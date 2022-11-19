@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class ChargeListActivity extends AppCompatActivity {
@@ -30,7 +34,6 @@ public class ChargeListActivity extends AppCompatActivity {
     private Button point_charge, charge_list, page;
     private Button oneMonth, threeMonth, sixMonth, year;
     private ImageButton back_btn, my_btn;
-    private TextView charge_date, charge_money;
     private FirebaseFirestore db;
 
     @Override
@@ -47,12 +50,45 @@ public class ChargeListActivity extends AppCompatActivity {
         sixMonth = findViewById(R.id.six_month);
         year = findViewById(R.id.one_year);
         page = findViewById(R.id.page);
-        charge_date = findViewById(R.id.charge_date);
-        charge_money = findViewById(R.id.charge_money);
 
         charge_list.setPaintFlags(charge_list.getPaintFlags()|Paint.UNDERLINE_TEXT_FLAG);
         page.setPaintFlags(page.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
         oneMonth.setPaintFlags(oneMonth.getPaintFlags()|Paint.UNDERLINE_TEXT_FLAG);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference ref = db.collection("user").document("lim").collection("pointcharge");
+        ref.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                int i=0;
+                TableLayout tableLayout = findViewById(R.id.chargeListTableLayout);
+                TableRow newTableRow = new TableRow(getBaseContext());
+                for (QueryDocumentSnapshot doc : task.getResult()) {
+                    Map<String, Object> data = doc.getData();
+                    View myPointChargeList = LayoutInflater.from(getBaseContext()).inflate(R.layout.charge_list_layout, null);
+                    TextView tv_chargeDate = myPointChargeList.findViewById(R.id.tv_chargeDate);
+                    TextView tv_chargePoint = myPointChargeList.findViewById(R.id.tv_chargePoint);
+
+                    String chargeDate = Objects.requireNonNull(data.get("chargeDate")).toString();
+                    String chargePoint = "₩".concat(Objects.requireNonNull(data.get("chargePoint")).toString());
+                    tv_chargeDate.setText(chargeDate);
+                    tv_chargePoint.setText(chargePoint);
+                    if (i==0) {
+                        newTableRow.addView(myPointChargeList);
+                    } else if(i < 5) {
+                        newTableRow = new TableRow(getBaseContext());
+                        newTableRow.addView(myPointChargeList);
+                    } else {
+                        newTableRow.addView(myPointChargeList);
+                        i=0;
+                    }
+                    tableLayout.addView(newTableRow);
+                    i++;
+                    Log.d("@@@TAG@@@", doc.getId() + "=>" + doc.getData());
+                }
+            } else {
+                Log.d("@@@TAG@@@", "Error getting documents: ", task.getException());
+            }
+        });
 
         my_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +98,7 @@ public class ChargeListActivity extends AppCompatActivity {
             }
         });
 
-        back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChargeListActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        back_btn.setOnClickListener(view -> onBackPressed());
 
         point_charge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,39 +108,5 @@ public class ChargeListActivity extends AppCompatActivity {
             }
         });
 
-        db = FirebaseFirestore.getInstance();
-        CollectionReference product = db.collection("user").document("lim").collection("pointcharge");
-        product.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (DocumentSnapshot doc : task.getResult()) {
-                        charge_date.setText(doc.getData().get("chargeDate").toString());
-                        charge_money.setText("₩".concat(doc.getData().get("chargePoint").toString()));
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
-        /*
-        db = FirebaseFirestore.getInstance();
-        DocumentReference productRef = db.collection("user").document("lim");
-        productRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
-        */
     }
 }
