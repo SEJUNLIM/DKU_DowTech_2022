@@ -1,98 +1,103 @@
 package com.example.dku_dow_dpp;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static android.content.ContentValues.TAG;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BabpickActivity extends AppCompatActivity {
-
-    Button firstbtn;
-    Button firstMakeBtn;
-    Button secondbtn;
-    Button secondMakeBtn;
-    Button thirdbtn;
-    Button thirdMakeBtn;
-    EditText et_Text;
     String food;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_babpick);
 
-        firstbtn = findViewById(R.id.first_btn);
-        firstbtn.setOnClickListener(new View.OnClickListener() {
+        try
+        {
+            Thread.sleep(1000);
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
+        LinearLayout ll = (LinearLayout) findViewById(R.id.mainlayout);
+        CollectionReference productRef = db.collection("user").document("lim").collection("coupon");
+
+        productRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickActivity.this, SplashActivity.class);
-                startActivity(intent);
-            }
-        });
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        String restaurant_name = document.getData().get("brand").toString();
+                        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View view = inflater.inflate(R.layout.activity_babpickmain, null);
+                        TextView name = view.findViewById(R.id.restaurant_name);
 
-        firstMakeBtn = findViewById(R.id.first_btn2);
-        firstMakeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickActivity.this, BabpickmakingActivity.class);
+                        name.setText(restaurant_name);
 
-                et_Text = findViewById(R.id.firstFood);
-                food = et_Text.getText().toString();
+                        Button findbtn = view.findViewById(R.id.find_btn);
 
-                intent.putExtra("food", food);
+                        findbtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(BabpickActivity.this, BabpickselectActivity.class);
 
-                startActivity(intent);
-            }
-        });
+                                food = restaurant_name;
 
-        secondbtn = findViewById(R.id.second_btn);
-        secondbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickActivity.this, SplashActivity.class);
-                startActivity(intent);
-            }
-        });
+                                intent.putExtra("food", food);
+                                startActivity(intent);
+                            }
+                        });
 
-        secondMakeBtn = findViewById(R.id.second_btn2);
-        secondMakeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickActivity.this, BabpickmakingActivity.class);
+                        Button makebtn = view.findViewById(R.id.make_btn);
 
-                et_Text = findViewById(R.id.secondFood);
-                food = et_Text.getText().toString();
+                        makebtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(BabpickActivity.this, BabpickmakingActivity.class);
 
-                intent.putExtra("food", food);
 
-                startActivity(intent);
-            }
-        });
+                                food = name.getText().toString();
 
-        thirdbtn = findViewById(R.id.third_btn);
-        thirdbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickActivity.this, SplashActivity.class);
-                startActivity(intent);
-            }
-        });
+                                intent.putExtra("food", food);
 
-        thirdMakeBtn = findViewById(R.id.third_btn2);
-        thirdMakeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickActivity.this, BabpickmakingActivity.class);
+                                startActivity(intent);
+                            }
+                        });
 
-                et_Text = findViewById(R.id.thirdFood);
-                food = et_Text.getText().toString();
-
-                intent.putExtra("food", food);
-
-                startActivity(intent);
+                        ll.addView(view);
+                    }
+                } else {
+                    Log.d("TAG","", task.getException());
+                }
             }
         });
     }
