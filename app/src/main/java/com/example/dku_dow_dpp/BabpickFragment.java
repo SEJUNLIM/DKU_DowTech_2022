@@ -23,11 +23,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 public class BabpickFragment extends Fragment {
 
     private View view;
     String food;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    ArrayList<String> arrayList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,6 +52,11 @@ public class BabpickFragment extends Fragment {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String restaurant_name = document.getData().get("brand").toString();
+
+                        if(arrayList.contains(restaurant_name))
+                            continue;
+
+                        arrayList.add(restaurant_name);
                         View viewinner = inflater.inflate(R.layout.activity_babpickmain, null);
                         TextView name = viewinner.findViewById(R.id.restaurant_name);
 
