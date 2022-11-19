@@ -23,7 +23,6 @@
             android:background="@color/main"
             android:contentDescription="@string/bottom_sheet_behavior"
             android:padding="10dp"
-            android:src="@drawable/back_arrow_resize"
             android:text="" />
 
         <TextView
