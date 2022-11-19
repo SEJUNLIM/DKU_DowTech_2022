@@ -30,10 +30,12 @@
         <activity android:name=".BuyCouponActivity" />
         <activity android:name=".ChargeListActivity" />
         <activity android:name=".ChargePointActivity" />
+        <activity android:name=".CouponDetailActivity"/>
+        <activity android:name=".CouponListActivity"/>
         <activity android:name=".MycouponActivity" />
+        <activity android:name=".MyCouponDetailActivity"/>
         <activity android:name=".MyPageActivity"/>
         <activity android:name=".SignInActivity"/>
         <activity android:name=".SplashActivity"/>
-        <activity android:name=".CouponListActivity"/>
     </application>
 </manifest>

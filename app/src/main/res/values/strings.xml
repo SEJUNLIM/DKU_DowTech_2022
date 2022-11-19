@@ -17,4 +17,10 @@
     <string name="recommend">추천순</string>
     <string name="abcOrder">가나다순</string>
     <string name="goraeSimjul">고래심줄</string>
+    <string name="price">가격</string>
+    <string name="productName">제품명</string>
+    <string name="productPicture">상품 사진</string>
+    <string name="barcode">바코드</string>
+    <string name="productDetail">-- 상품 상세</string>
+    <string name="advertisement">광고</string>
 </resources>
