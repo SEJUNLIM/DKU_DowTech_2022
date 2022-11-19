@@ -3,7 +3,6 @@ package com.example.dku_dow_dpp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 

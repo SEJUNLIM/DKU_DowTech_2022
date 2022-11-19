@@ -28,7 +28,7 @@
             android:layout_weight="3"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="대포폰"
+            android:text="@string/appName"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="30sp" />
@@ -46,7 +46,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="카테고리"
+        android:text="@string/category"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
@@ -70,10 +70,10 @@
                 android:layout_marginBottom="10dp">
 
                 <android.widget.Button
-                    android:id="@+id/buyCouponButton"
+                    android:id="@+id/restaurant"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="식당"
+                    android:text="@string/restaurant"
                     android:textSize="25sp"
                     android:elevation="10dp"
                     android:background="@drawable/squarcle"
@@ -81,15 +81,15 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <android.widget.Button
-                    android:id="@+id/myCoupon1"
+                    android:id="@+id/cafe"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="카페"
+                    android:text="@string/cafe"
                     android:textSize="25sp"
                     android:background="@drawable/squarcle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/buyCouponButton"
+                    app:layout_constraintStart_toEndOf="@+id/restaurant"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -98,25 +98,25 @@
                 android:layout_marginBottom="10dp">
 
                 <android.widget.Button
-                    android:id="@+id/myCoupon2"
+                    android:id="@+id/convenient"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="편의점"
+                    android:text="@string/convenient"
                     android:textSize="25sp"
                     android:background="@drawable/squarcle"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <android.widget.Button
-                    android:id="@+id/myCoupon3"
+                    android:id="@+id/office"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="문구"
+                    android:text="@string/office"
                     android:textSize="25sp"
                     android:background="@drawable/squarcle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/myCoupon2"
+                    app:layout_constraintStart_toEndOf="@+id/convenient"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -126,25 +126,25 @@
                 android:layout_marginBottom="10dp">
 
                 <android.widget.Button
-                    android:id="@+id/myCoupon4"
+                    android:id="@+id/beauty"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="뷰티"
+                    android:text="@string/beauty"
                     android:textSize="25sp"
                     android:background="@drawable/squarcle"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <android.widget.Button
-                    android:id="@+id/myCoupon5"
+                    android:id="@+id/book"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="도서"
+                    android:text="@string/book"
                     android:textSize="25sp"
                     android:background="@drawable/squarcle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/myCoupon4"
+                    app:layout_constraintStart_toEndOf="@+id/beauty"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -154,25 +154,25 @@
                 android:layout_marginBottom="20dp">
 
                 <android.widget.Button
-                    android:id="@+id/myCoupon6"
+                    android:id="@+id/internetLecture"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="인터넷\n강좌"
+                    android:text="@string/internetLecture"
                     android:textSize="25sp"
                     android:background="@drawable/squarcle"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <android.widget.Button
-                    android:id="@+id/myCoupon7"
+                    android:id="@+id/culture"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
-                    android:text="문화생활"
+                    android:text="@string/culture"
                     android:textSize="25sp"
                     android:background="@drawable/squarcle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/myCoupon6"
+                    app:layout_constraintStart_toEndOf="@+id/internetLecture"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

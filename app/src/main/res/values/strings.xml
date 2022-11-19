@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">dku_dow_dpp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appName">대포폰</string>
+    <string name="myCoupons">마이 쿠폰</string>
+    <string name="coupon">쿠폰</string>
+    <string name="category">카테고리</string>
+    <string name="restaurant">식당</string>
+    <string name="cafe">카페</string>
+    <string name="convenient">편의점</string>
+    <string name="office">문구</string>
+    <string name="beauty">뷰티</string>
+    <string name="book">도서</string>
+    <string name="internetLecture">인터넷\n강좌</string>
+    <string name="culture">문화생활</string>
+    <string name="search">검색</string>
+    <string name="sort">정렬 |</string>
+    <string name="recommend">추천순</string>
+    <string name="abcOrder">가나다순</string>
+    <string name="goraeSimjul">고래심줄</string>
+    <string name="price">가격</string>
+    <string name="productName">제품명</string>
+    <string name="productPicture">상품 사진</string>
+    <string name="barcode">바코드</string>
+    <string name="productDetail">-- 상품 상세</string>
+    <string name="advertisement">광고</string>
 </resources>
