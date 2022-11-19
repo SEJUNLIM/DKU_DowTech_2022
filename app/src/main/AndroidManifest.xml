@@ -36,6 +36,5 @@
         <activity android:name=".MyCouponDetailActivity"/>
         <activity android:name=".MyPageActivity"/>
         <activity android:name=".SignInActivity"/>
-        <activity android:name=".SplashActivity"/>
     </application>
 </manifest>
