@@ -23,4 +23,6 @@
     <string name="barcode">바코드</string>
     <string name="productDetail">-- 상품 상세</string>
     <string name="advertisement">광고</string>
+    <string name="image">이미지</string>
+    <string name="logo">logo</string>
 </resources>
