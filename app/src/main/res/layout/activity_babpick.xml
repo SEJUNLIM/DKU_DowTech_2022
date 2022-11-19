@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/main"
@@ -47,9 +48,11 @@
             android:text="" />
     </LinearLayout>
 
+
     <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:layout_weight="3"
         android:orientation="vertical"
@@ -72,152 +75,20 @@
                 android:layout_marginBottom="10dp"
                 />
         </LinearLayout>
-
         <LinearLayout
+            android:id="@+id/tlqkf1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/firstFood"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:enabled="false"
-                android:layout_marginLeft="30dp"
-                android:text="스타벅스" />
-
-            <android.widget.Button
-                android:id="@+id/first_btn"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:padding="10dp"
-                android:text="탐색" />
-
-            <android.widget.Button
-                android:id="@+id/first_btn2"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:layout_marginRight="30dp"
-                android:padding="10dp"
-                android:text="생성" />
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1">
 
-            <EditText
-                android:id="@+id/secondFood"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:enabled="false"
-                android:layout_marginLeft="30dp"
-                android:text="맘스터치" />
-
-            <android.widget.Button
-                android:id="@+id/second_btn"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:padding="10dp"
-                android:text="탐색" />
-
-            <android.widget.Button
-                android:id="@+id/second_btn2"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:layout_marginRight="30dp"
-                android:padding="10dp"
-                android:text="생성" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/thirdFood"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:enabled="false"
-                android:layout_marginLeft="30dp"
-                android:text="천향마라탕" />
-
-            <android.widget.Button
-                android:id="@+id/third_btn"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:padding="10dp"
-                android:text="탐색" />
-
-            <android.widget.Button
-                android:id="@+id/third_btn2"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:layout_marginRight="30dp"
-                android:padding="10dp"
-                android:text="생성" />
-
-        </LinearLayout>
+    </LinearLayout>
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingLeft="20dp"
@@ -236,6 +107,5 @@
 
             />
 
-    </LinearLayout>
     </LinearLayout>
 </LinearLayout>

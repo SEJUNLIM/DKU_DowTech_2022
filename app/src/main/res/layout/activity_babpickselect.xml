@@ -75,9 +75,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="0.5">
+            android:layout_height="50dp"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,217 +133,11 @@
             android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:id="@+id/layout1">
-
-            <EditText
-                android:id="@+id/getname1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="최수민" />
-
-            <EditText
-                android:id="@+id/gettime1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="12:30am" />
-
-            <android.widget.Button
-                android:id="@+id/firstsend"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:layout_marginRight="30dp"
-                android:padding="10dp"
-                android:text="매칭" />
-
+            android:id="@+id/select_ll"
+            android:orientation="vertical">
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/layout2">>
 
-            <EditText
-                android:id="@+id/getname2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="임세준" />
-
-            <EditText
-                android:id="@+id/gettime2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="1:00am" />
-
-            <android.widget.Button
-                android:id="@+id/secondsend"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:layout_marginRight="30dp"
-                android:padding="10dp"
-                android:text="매칭" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/layout3">>
-
-            <EditText
-                android:id="@+id/getname3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="주영운" />
-
-            <EditText
-                android:id="@+id/gettime3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="6:30am" />
-
-            <android.widget.Button
-                android:id="@+id/thirdsend"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:layout_marginRight="30dp"
-                android:padding="10dp"
-                android:text="매칭" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/layout4">>
-
-            <EditText
-                android:id="@+id/getname4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="윤우준" />
-
-            <EditText
-                android:id="@+id/gettime4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_weight="2"
-                android:textColor="@color/black"
-                android:layout_marginRight="20dp"
-                android:enabled="false"
-                android:text="5:30am" />
-
-            <android.widget.Button
-                android:id="@+id/fourthsend"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:minHeight="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:background="@color/main"
-                android:textColor="@color/white"
-                android:layout_marginRight="30dp"
-                android:padding="10dp"
-                android:text="매칭" />
-        </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
@@ -358,6 +151,7 @@
         android:layout_weight="5">
 
         <TextView
+            android:id="@+id/tlqkfdk"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black"

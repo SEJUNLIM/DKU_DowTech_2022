@@ -3,6 +3,7 @@ package com.example.dku_dow_dpp;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton my_btn;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        setContentView(R.layout.activity_babpick);
     }
 
 
