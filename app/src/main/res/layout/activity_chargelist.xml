@@ -140,6 +140,7 @@
         android:layout_marginTop="30dp">
 
         <TextView
+            android:id="@+id/charge_date"
             android:layout_width="195dp"
             android:layout_height="wrap_content"
             android:text="22.11.15"
@@ -150,6 +151,7 @@
             android:layout_marginTop="4dp"/>
 
         <TextView
+            android:id="@+id/charge_money"
             android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:text="₩10000"
