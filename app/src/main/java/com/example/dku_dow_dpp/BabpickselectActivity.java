@@ -50,11 +50,7 @@ public class BabpickselectActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    int count = 0;
-
                     for (DocumentSnapshot document : task.getResult()) {
-                        count++;
-
                         String name = document.getData().get("name").toString();
                         String hour = document.get("hour").toString();
                         String min = document.get("min").toString();
@@ -63,15 +59,12 @@ public class BabpickselectActivity extends AppCompatActivity {
                         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View view = inflater.inflate(R.layout.activity_babpickselectpeople, null);
                         EditText ed_text = view.findViewById(R.id.get_name);
-                        ed_text.setId(count);
                         ed_text.setText(name);
 
                         EditText ed_text_time = view.findViewById(R.id.get_time);
-                        ed_text_time.setId(count+10);
                         ed_text_time.setText(time);
 
                         Button send_btn = view.findViewById(R.id.send_btn);
-                        send_btn.setId(count+20);
                         send_btn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
