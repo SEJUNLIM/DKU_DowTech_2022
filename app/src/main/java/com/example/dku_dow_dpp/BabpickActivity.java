@@ -27,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +35,7 @@ import java.util.Map;
 public class BabpickActivity extends AppCompatActivity {
     String food;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    ArrayList<String> arrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,9 @@ public class BabpickActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String restaurant_name = document.getData().get("brand").toString();
+                        if(arrayList.contains(restaurant_name))
+                            continue;
+                        arrayList.add(restaurant_name);
                         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View view = inflater.inflate(R.layout.activity_babpickmain, null);
                         TextView name = view.findViewById(R.id.restaurant_name);
