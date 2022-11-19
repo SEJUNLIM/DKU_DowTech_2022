@@ -65,7 +65,7 @@ public class BabpickmakingActivity extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BabpickmakingActivity.this, BabpickActivity.class);
+                Intent intent = new Intent(BabpickmakingActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
