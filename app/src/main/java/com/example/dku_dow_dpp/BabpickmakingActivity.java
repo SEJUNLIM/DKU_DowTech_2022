@@ -105,11 +105,7 @@ public class BabpickmakingActivity extends AppCompatActivity {
                             }
                         });
 
-
-//                myroom_id = current_id;
-//                intent.putExtra("myroom_id", myroom_id);
                 intent.putExtra("food", food);
-
                 intent.putExtra("hour", hour);
                 intent.putExtra("min", min);
 
