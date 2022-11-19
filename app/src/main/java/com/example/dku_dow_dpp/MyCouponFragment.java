@@ -24,7 +24,6 @@ import java.util.Objects;
 public class MyCouponFragment extends Fragment {
     private View view;
     Button buyCoupon;
-    ImageButton backBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,6 +58,9 @@ public class MyCouponFragment extends Fragment {
                     }
                     i++;
                     Log.d("@@@TAG@@@", document.getId()+"=>"+document.getData());
+                }
+                if (i!=0 && i%2==0) {
+                    tableLayout.addView(newTableRow);
                 }
             } else {
                 Log.d("@@@TAG@@@", "Error getting documents: ", task.getException());
