@@ -18,6 +18,9 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -42,8 +45,7 @@ public class MyCouponFragment extends Fragment {
                     Map<String, Object> couponData = document.getData();
                     View myCouponListView = LayoutInflater.from(getContext()).inflate(R.layout.my_coupon_list_layout,null);
                     Button theCoupon = myCouponListView.findViewById(R.id.myCoupon1);
-                    int finalI = i;
-                    theCoupon.setOnClickListener(view1 -> couponClick(intentMyCouponDetail,finalI));
+                    theCoupon.setOnClickListener(view1 -> couponClick(intentMyCouponDetail, (HashMap<String,Object>) document.getData()));
                     String stringData = Objects.requireNonNull(couponData.get("brand")) +"\n"+ Objects.requireNonNull(couponData.get("name"));
                     theCoupon.setText(stringData);
                     if (i==0) {
@@ -76,8 +78,9 @@ public class MyCouponFragment extends Fragment {
         return view;
     }
 
-    protected void couponClick(Intent intent, int i){
-        intent.putExtra("couponNum",i);
+    protected void couponClick(Intent intent, Serializable docs){
+        intent.putExtra("coupon", docs);
         startActivity(intent);
     }
+//   document 넘겨주는 방안 생각하기
 }
