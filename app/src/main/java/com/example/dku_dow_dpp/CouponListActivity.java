@@ -102,7 +102,7 @@ public class CouponListActivity extends AppCompatActivity {
         Thread thread = new Thread() {
             public void run() {
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(700);
                     runOnUiThread(() -> {
                         Collections.sort(viewArray,new BrandScoreComparator());
                         screenReload(viewArray);
@@ -137,7 +137,6 @@ public class CouponListActivity extends AppCompatActivity {
 
     void screenReload(ArrayList<CouponListPerBrand> va){
         finalList.removeAllViews();
-//        sleep(400);
         for (CouponListPerBrand clpb: va) {
             Log.d("TAG", clpb.name);
             finalList.addView(clpb.view);
