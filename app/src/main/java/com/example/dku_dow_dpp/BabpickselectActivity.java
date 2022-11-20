@@ -34,7 +34,7 @@ public class BabpickselectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_babpickselect);
         try
         {
-            Thread.sleep(1000);
+            Thread.sleep(250);
         } catch (InterruptedException e)
         {
             e.printStackTrace();
@@ -78,7 +78,7 @@ public class BabpickselectActivity extends AppCompatActivity {
                                 Intent intent = new Intent(BabpickselectActivity.this, BabpickresultActivity.class);
                                 try
                                 {
-                                    Thread.sleep(1000);
+                                    Thread.sleep(250);
                                 } catch (InterruptedException e)
                                 {
                                     e.printStackTrace();
