@@ -27,6 +27,7 @@ public class BabpickselectActivity extends AppCompatActivity {
     ImageButton backbtn;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +51,19 @@ public class BabpickselectActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
+                    LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    if(task.getResult().size() == 0) {
+                        View if_non = inflater.inflate(R.layout.activity_ifnone, null);
+                        TextView tv = if_non.findViewById(R.id.textview1);
+                        tv.setText("정보가 존재하지 않습니다");
+                        container.addView(if_non);
+                    }
                     for (DocumentSnapshot document : task.getResult()) {
                         String name = document.getData().get("name").toString();
                         String hour = document.get("hour").toString();
                         String min = document.get("min").toString();
                         String time = hour + " : " + min;
 
-                        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View view = inflater.inflate(R.layout.activity_babpickselectpeople, null);
                         EditText ed_text = view.findViewById(R.id.get_name);
                         ed_text.setText(name);
