@@ -34,7 +34,8 @@ public class BabpickmakingActivity extends AppCompatActivity {
     ImageButton backbtn;
     TimePicker mTimePicker;
     String name;
-    static String current_id;
+    String eng_name;
+    String current_id;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -59,18 +60,14 @@ public class BabpickmakingActivity extends AppCompatActivity {
         });
 
         Intent getstr = getIntent();
+        String eng_name = getstr.getStringExtra("eng_name");
         String food = getstr.getStringExtra("food");
 
         backbtn = findViewById(R.id.backbutton);
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickmakingActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        backbtn.setOnClickListener(view -> onBackPressed());
         Intent intent = new Intent(BabpickmakingActivity.this, Babpickresult2Activity.class);
 
+        intent.putExtra("eng_name", eng_name);
         makingbtn = findViewById(R.id.making_btn);
         makingbtn.setOnClickListener(new View.OnClickListener() {
             @Override

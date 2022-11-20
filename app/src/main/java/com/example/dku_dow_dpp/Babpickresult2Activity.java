@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,16 +25,22 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Babpickresult2Activity extends AppCompatActivity {
     ImageButton backbtn;
     Button returnbtn;
     TextView timetext;
     TextView nametext;
     String food;
+    ImageView place;
+    String eng_name;
+    String current_id;
 
     public void onBackPressed() {
         super.onBackPressed();
-        String myroom_id = BabpickmakingActivity.current_id;
+        String myroom_id = current_id;
         DocumentReference productRef = db.collection("babpick").document("식당별").collection(food).document(myroom_id);
 
         if(productRef != null) {
@@ -51,17 +58,25 @@ public class Babpickresult2Activity extends AppCompatActivity {
         Intent getstr = getIntent();
 
 
+        eng_name = getstr.getStringExtra("eng_name");
         food = getstr.getStringExtra("food");
 
         String hour = getstr.getStringExtra("hour");
         String min = getstr.getStringExtra("min");
-
+        current_id = getstr.getStringExtra("myroom_id");
         String time = hour + " 시   " + min +" 분";
 
         nametext = findViewById(R.id.nametext);
         nametext.setText(food);
         timetext = findViewById(R.id.timetext);
         timetext.setText(time);
+
+        TextView temp = findViewById(R.id.tkkk);
+        temp.setText(eng_name);
+
+        int iResId = getResources().getIdentifier( "@drawable/"+eng_name, "drawable", this.getPackageName() );
+        place = findViewById(R.id.place);
+        place.setImageResource(iResId);
 
         returnbtn = findViewById(R.id.return_btn);
         returnbtn.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +92,7 @@ public class Babpickresult2Activity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                String myroom_id = BabpickmakingActivity.current_id;
+                String myroom_id = current_id;
                 DocumentReference productRef = db.collection("babpick").document("식당별").collection(food).document(myroom_id);
 
                 if(productRef != null) {

@@ -37,13 +37,7 @@ public class BabpickresultActivity extends AppCompatActivity {
         tv_time.setText(time);
 
         backbtn = findViewById(R.id.button);
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickresultActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        backbtn.setOnClickListener(view -> onBackPressed());
 
         returnbtn = findViewById(R.id.return_btn);
         returnbtn.setOnClickListener(new View.OnClickListener() {
