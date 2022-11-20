@@ -57,12 +57,19 @@ public class BabpickActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
+                    LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    if(task.getResult().size() == 0) {
+                        View if_non = inflater.inflate(R.layout.activity_ifnone, null);
+                        TextView tv = if_non.findViewById(R.id.textview1);
+                        tv.setText("정보가 존재하지 않습니다");
+                        ll.addView(if_non);
+                    }
                     for (QueryDocumentSnapshot document : task.getResult()) {
+                        Log.d("TAG^^^^^^^^^^^^", String.valueOf(task.getResult().size()));
                         String restaurant_name = document.getData().get("brand").toString();
                         if(arrayList.contains(restaurant_name))
                             continue;
                         arrayList.add(restaurant_name);
-                        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View view = inflater.inflate(R.layout.activity_babpickmain, null);
                         TextView name = view.findViewById(R.id.restaurant_name);
 
