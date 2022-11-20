@@ -64,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="해당 식당 쿠폰 보유자 목록"
+                android:text="해당 식당 밥 친구 매칭 희망자"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
