@@ -31,7 +31,7 @@ public class MycouponActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         Intent intentMyCouponDetail = new Intent(MycouponActivity.this,MyCouponDetailActivity.class);
 
-        CollectionReference colref = db.collection("user").document("lim").collection("coupon");
+        CollectionReference colref = db.collection("user/lim/coupon");
         colref.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 int i = 0;

@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
@@ -19,13 +18,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
 public class MyCouponFragment extends Fragment {
-    private View view;
     Button buyCoupon;
 
     @Override
@@ -35,7 +32,7 @@ public class MyCouponFragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         Intent intentMyCouponDetail = new Intent(getActivity(),MyCouponDetailActivity.class);
 
-        CollectionReference colref = db.collection("user").document("lim").collection("coupon");
+        CollectionReference colref = db.collection("user/lim/coupon");
         colref.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 int i = 0;
@@ -45,7 +42,7 @@ public class MyCouponFragment extends Fragment {
                     Map<String, Object> couponData = document.getData();
                     View myCouponListView = LayoutInflater.from(getContext()).inflate(R.layout.my_coupon_list_layout,null);
                     Button theCoupon = myCouponListView.findViewById(R.id.myCoupon1);
-                    theCoupon.setOnClickListener(view1 -> couponClick(intentMyCouponDetail, (HashMap<String,Object>) document.getData()));
+                    theCoupon.setOnClickListener(view1 -> couponClick(intentMyCouponDetail, (HashMap<String,Object>) couponData));
                     String stringData = Objects.requireNonNull(couponData.get("brand")) +"\n"+ Objects.requireNonNull(couponData.get("name"));
                     theCoupon.setText(stringData);
                     if (i==0) {
