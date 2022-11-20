@@ -25,4 +25,6 @@
     <string name="advertisement">광고</string>
     <string name="image">이미지</string>
     <string name="logo">logo</string>
+    <string name="buy">구매</string>
+    <string name="present">선물</string>
 </resources>
