@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -134,68 +135,31 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#d5d5d5"
+        android:layout_height="250dp"
         android:orientation="horizontal"
         android:layout_marginTop="30dp">
 
-        <TextView
-            android:id="@+id/charge_date"
-            android:layout_width="195dp"
+        <TableLayout
+            android:id="@+id/chargeListTableLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="22.11.15"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:gravity="start"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="4dp"/>
+            android:stretchColumns="0,1"/>
 
-        <TextView
-            android:id="@+id/charge_money"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:text="₩10000"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:gravity="end"
-            android:layout_marginTop="4dp"/>
-
+            <TableRow
+                android:id="@+id/tableRow"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                tools:ignore="UselessParent"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#d5d5d5"
-        android:orientation="horizontal"
-        android:layout_marginTop="1dp">
 
-        <TextView
-            android:layout_width="195dp"
-            android:layout_height="wrap_content"
-            android:text="22.11.18"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:gravity="start"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="4dp"/>
-
-        <TextView
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:text="₩25000"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:gravity="end"
-            android:layout_marginTop="4dp"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:layout_marginTop="190dp">
+        android:layout_marginTop="10dp">
 
         <android.widget.Button
             android:id="@+id/page"

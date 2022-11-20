@@ -23,14 +23,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class BabpickFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.Collections;
 
+public class BabpickFragment extends Fragment {
     private View view;
-    String food;
+    private String food;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ArrayList<String> arrayList = new ArrayList<>();
         view = inflater.inflate(R.layout.fragment_babpick,container,false);
 
         try
@@ -47,8 +50,25 @@ public class BabpickFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
+                    if(task.getResult().size() == 0) {
+                        View if_non = inflater.inflate(R.layout.activity_ifnone, null);
+                        TextView tv = if_non.findViewById(R.id.textview1);
+                        tv.setText("정보가 존재하지 않습니다");
+                        container.addView(if_non);
+                    }
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String restaurant_name = document.getData().get("brand").toString();
+
+                        if(arrayList.contains(restaurant_name))
+                            continue;
+
+                        arrayList.add(restaurant_name);
+
+                    }
+                    Collections.sort(arrayList);
+
+                    for(String restaurant_name : arrayList) {
+                        Log.d("TAG", restaurant_name);
                         View viewinner = inflater.inflate(R.layout.activity_babpickmain, null);
                         TextView name = viewinner.findViewById(R.id.restaurant_name);
 
@@ -91,6 +111,8 @@ public class BabpickFragment extends Fragment {
                 }
             }
         });
+
+
 
         return view;
     }
