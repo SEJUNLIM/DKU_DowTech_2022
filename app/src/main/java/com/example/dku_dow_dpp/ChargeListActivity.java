@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -26,6 +27,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Map;
 import java.util.Objects;
 
@@ -68,7 +71,10 @@ public class ChargeListActivity extends AppCompatActivity {
                     TextView tv_chargeDate = myPointChargeList.findViewById(R.id.tv_chargeDate);
                     TextView tv_chargePoint = myPointChargeList.findViewById(R.id.tv_chargePoint);
 
-                    String chargeDate = Objects.requireNonNull(data.get("chargeDate")).toString();
+                    SimpleDateFormat sdt = new SimpleDateFormat("yyyy.MM.dd");
+                    Timestamp chargeDateTS = (Timestamp) data.get("chargeDate");
+
+                    String chargeDate = sdt.format(chargeDateTS.toDate());
                     String chargePoint = "₩".concat(Objects.requireNonNull(data.get("chargePoint")).toString());
                     tv_chargeDate.setText(chargeDate);
                     tv_chargePoint.setText(chargePoint);
