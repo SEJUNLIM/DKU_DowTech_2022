@@ -67,8 +67,9 @@ public class BabpickFragment extends Fragment {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String restaurant_name = document.getData().get("brand").toString();
                         eng_name = document.getData().get("eng").toString();
+                        String cl = document.getData().get("class").toString();
 
-                        if(arrayList.contains(restaurant_name))
+                        if(arrayList.contains(restaurant_name) || !cl.equals("restaurant"))
                             continue;
 
                         Restaurant_inform ri = new Restaurant_inform(restaurant_name, eng_name);
@@ -78,7 +79,6 @@ public class BabpickFragment extends Fragment {
                     Collections.sort(arrayList, (o1, o2) ->  o1.ret_name.compareTo(o2.ret_name));
 
                     for(Restaurant_inform restaurant_inform : arrayList) {
-                        Log.d("TAG", restaurant_inform.ret_name);
                         View viewinner = inflater.inflate(R.layout.activity_babpickmain, null);
                         TextView name = viewinner.findViewById(R.id.restaurant_name);
 
