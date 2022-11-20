@@ -62,7 +62,7 @@
                 android:contentDescription="@string/productPicture" />
 
             <TextView
-                android:id="@+id/productPrice"
+                android:id="@+id/productName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/productName"
@@ -76,9 +76,9 @@
             <ImageView
                 android:id="@+id/barcode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="130dp"
                 android:layout_marginTop="3dp"
-                app:srcCompat="@drawable/ic_launcher_background"
+                app:srcCompat="@drawable/barcode"
                 android:contentDescription="@string/barcode" />
 
             <TextView
@@ -92,7 +92,7 @@
                 android:padding="10dp"/>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/detailText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/grey"

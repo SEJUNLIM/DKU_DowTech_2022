@@ -21,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="9dp"
                 android:text="상호명"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/score"
@@ -29,36 +30,15 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="★0.0/5"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,RtlHardcoded" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/listLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="1dp"
-            android:background="@color/grey"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingStart="20dp"
-                android:text="menu"
-                android:textColor="@color/black" />
-
-            <android.widget.Button
-                android:id="@+id/menuPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:gravity="right"
-                android:minHeight="0dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="20dp"
-                android:paddingBottom="10dp"
-                android:text="￦8000" />
         </LinearLayout>
 
         <View
@@ -70,4 +50,5 @@
             android:background="@color/black" />
 
     </LinearLayout>
+
 </LinearLayout>

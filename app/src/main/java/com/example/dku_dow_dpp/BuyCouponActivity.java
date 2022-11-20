@@ -37,18 +37,18 @@ public class BuyCouponActivity  extends AppCompatActivity {
 
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(view -> onBackPressed());
-        restaurant.setOnClickListener(view -> categoryClick(0));
-        cafe.setOnClickListener(view -> categoryClick(1));
-        convenient.setOnClickListener(view -> categoryClick(2));
-        office.setOnClickListener(view -> categoryClick(3));
-        beauty.setOnClickListener(view -> categoryClick(4));
-        book.setOnClickListener(view -> categoryClick(5));
-        internet.setOnClickListener(view -> categoryClick(6));
-        culture.setOnClickListener(view -> categoryClick(7));
+        restaurant.setOnClickListener(view -> categoryClick("restaurant"));
+        cafe.setOnClickListener(view -> categoryClick("cafe"));
+        convenient.setOnClickListener(view -> categoryClick("convenient"));
+        office.setOnClickListener(view -> categoryClick("office"));
+        beauty.setOnClickListener(view -> categoryClick("beauty"));
+        book.setOnClickListener(view -> categoryClick("book"));
+        internet.setOnClickListener(view -> categoryClick("internetLecture"));
+        culture.setOnClickListener(view -> categoryClick("culture"));
     }
 
-    protected void categoryClick(int i){
-        intent.putExtra("category",i);
+    protected void categoryClick(String cat){
+        intent.putExtra("category",cat);
         startActivity(intent);
     }
 }
