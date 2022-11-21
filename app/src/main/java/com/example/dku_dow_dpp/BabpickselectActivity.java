@@ -43,6 +43,9 @@ public class BabpickselectActivity extends AppCompatActivity {
         Intent getstr = getIntent();
 
         String restaurant = getstr.getStringExtra("food");
+        String eng_name = getstr.getStringExtra("eng_name");
+
+
 
         LinearLayout container = (LinearLayout) findViewById(R.id.select_ll);
         CollectionReference productRef = db.collection("babpick").document("식당별").collection(restaurant);
@@ -85,6 +88,7 @@ public class BabpickselectActivity extends AppCompatActivity {
                                 }
                                 intent.putExtra("getname", name);
                                 intent.putExtra("gettime", time);
+                                intent.putExtra("eng_name", eng_name);
 
                                 startActivity(intent);
                             }

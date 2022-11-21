@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,6 +20,8 @@ public class BabpickresultActivity extends AppCompatActivity {
     Button returnbtn;
     TextView tv_name;
     TextView tv_time;
+    String eng_name;
+    ImageView place;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,11 @@ public class BabpickresultActivity extends AppCompatActivity {
 
         backbtn = findViewById(R.id.button);
         backbtn.setOnClickListener(view -> onBackPressed());
+
+        eng_name = getstr.getStringExtra("eng_name");
+        int iResId = getResources().getIdentifier( "@drawable/"+eng_name, "drawable", this.getPackageName() );
+        place = findViewById(R.id.place);
+        place.setImageResource(iResId);
 
         returnbtn = findViewById(R.id.return_btn);
         returnbtn.setOnClickListener(new View.OnClickListener() {
