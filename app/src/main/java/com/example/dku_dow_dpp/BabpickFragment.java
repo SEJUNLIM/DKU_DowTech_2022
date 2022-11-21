@@ -1,6 +1,5 @@
 package com.example.dku_dow_dpp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,15 +23,25 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
+class Restaurant_inform {
+    String ret_name;
+    String eng_name;
+
+    public Restaurant_inform(String ret_name, String eng_name) {
+        this.ret_name = ret_name;
+        this.eng_name = eng_name;
+    }
+}
 
 public class BabpickFragment extends Fragment {
     private View view;
     private String food;
+    private String eng_name;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ArrayList<String> arrayList = new ArrayList<>();
+        ArrayList<Restaurant_inform> arrayList = new ArrayList<>();
         view = inflater.inflate(R.layout.fragment_babpick,container,false);
 
         try
@@ -58,21 +66,23 @@ public class BabpickFragment extends Fragment {
                     }
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String restaurant_name = document.getData().get("brand").toString();
+                        eng_name = document.getData().get("eng").toString();
+                        String cl = document.getData().get("class").toString();
 
-                        if(arrayList.contains(restaurant_name))
+                        if(arrayList.contains(restaurant_name) || !cl.equals("restaurant"))
                             continue;
 
-                        arrayList.add(restaurant_name);
+                        Restaurant_inform ri = new Restaurant_inform(restaurant_name, eng_name);
+                        arrayList.add(ri);
 
                     }
-                    Collections.sort(arrayList);
+                    Collections.sort(arrayList, (o1, o2) ->  o1.ret_name.compareTo(o2.ret_name));
 
-                    for(String restaurant_name : arrayList) {
-                        Log.d("TAG", restaurant_name);
+                    for(Restaurant_inform restaurant_inform : arrayList) {
                         View viewinner = inflater.inflate(R.layout.activity_babpickmain, null);
                         TextView name = viewinner.findViewById(R.id.restaurant_name);
 
-                        name.setText(restaurant_name);
+                        name.setText(restaurant_inform.ret_name);
 
                         Button findbtn = viewinner.findViewById(R.id.find_btn);
 
@@ -81,7 +91,7 @@ public class BabpickFragment extends Fragment {
                             public void onClick(View view) {
                                 Intent intent = new Intent(getActivity(), BabpickselectActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                                food = restaurant_name;
+                                food = restaurant_inform.ret_name;
 
                                 intent.putExtra("food", food);
                                 startActivity(intent);
@@ -97,7 +107,9 @@ public class BabpickFragment extends Fragment {
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 
                                 food = name.getText().toString();
+                                String english_name = restaurant_inform.eng_name;
 
+                                intent.putExtra("eng_name", english_name);
                                 intent.putExtra("food", food);
 
                                 startActivity(intent);

@@ -100,12 +100,6 @@ public class BabpickselectActivity extends AppCompatActivity {
 
 
         backbtn = findViewById(R.id.button);
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BabpickselectActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        backbtn.setOnClickListener(view -> onBackPressed());
     }
 }

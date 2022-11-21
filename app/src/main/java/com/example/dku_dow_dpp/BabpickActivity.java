@@ -65,9 +65,10 @@ public class BabpickActivity extends AppCompatActivity {
                         ll.addView(if_non);
                     }
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        Log.d("TAG^^^^^^^^^^^^", String.valueOf(task.getResult().size()));
                         String restaurant_name = document.getData().get("brand").toString();
-                        if(arrayList.contains(restaurant_name))
+                        String cl = document.getData().get("class").toString();
+                        Log.d("@#########!@#!#@!#!@#", cl);
+                        if(arrayList.contains(restaurant_name) || !cl.equals("restaurant"))
                             continue;
                         arrayList.add(restaurant_name);
                         View view = inflater.inflate(R.layout.activity_babpickmain, null);
