@@ -92,7 +92,9 @@ public class BabpickFragment extends Fragment {
                                 Intent intent = new Intent(getActivity(), BabpickselectActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                                 food = restaurant_inform.ret_name;
+                                String english_name = restaurant_inform.eng_name;
 
+                                intent.putExtra("eng_name", english_name);
                                 intent.putExtra("food", food);
                                 startActivity(intent);
                             }
