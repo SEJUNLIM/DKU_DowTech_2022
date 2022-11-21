@@ -40,7 +40,7 @@ public class Babpickresult2Activity extends AppCompatActivity {
 
     public void onBackPressed() {
         super.onBackPressed();
-        String myroom_id = BabpickmakingActivity.current_id;
+        String myroom_id = current_id;
         DocumentReference productRef = db.collection("babpick").document("식당별").collection(food).document(myroom_id);
 
         if(productRef != null) {
@@ -64,7 +64,7 @@ public class Babpickresult2Activity extends AppCompatActivity {
         String hour = getstr.getStringExtra("hour");
         String min = getstr.getStringExtra("min");
         current_id = getstr.getStringExtra("myroom_id");
-
+        
         String time = hour + " 시   " + min +" 분";
 
         nametext = findViewById(R.id.nametext);
@@ -76,7 +76,7 @@ public class Babpickresult2Activity extends AppCompatActivity {
         int iResId = getResources().getIdentifier( "@drawable/"+eng_name, "drawable", this.getPackageName() );
         place = findViewById(R.id.place);
         place.setImageResource(iResId);
-
+        
         backbtn = findViewById(R.id.button);
         backbtn.setOnClickListener(view -> onBackPressed());
 
@@ -87,6 +87,13 @@ public class Babpickresult2Activity extends AppCompatActivity {
                 Intent intent = new Intent(Babpickresult2Activity.this, MainActivity.class);
 
                 String myroom_id = BabpickmakingActivity.current_id;
+                try
+                {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
 
                 if(myroom_id != null) {
                     DocumentReference productRef = db.collection("babpick").document("식당별").collection(food).document(myroom_id);
