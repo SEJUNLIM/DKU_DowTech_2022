@@ -35,7 +35,7 @@ public class BabpickmakingActivity extends AppCompatActivity {
     TimePicker mTimePicker;
     String name;
     String eng_name;
-    String current_id;
+    static String current_id;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -91,7 +91,7 @@ public class BabpickmakingActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 current_id = documentReference.getId();
-                                intent.putExtra("myroom_id", documentReference.getId());
+
                                 Log.d(TAG, "DocumentSnapshot added with ID: ############" + current_id);
                             }
                         })
@@ -105,7 +105,7 @@ public class BabpickmakingActivity extends AppCompatActivity {
                 intent.putExtra("food", food);
                 intent.putExtra("hour", hour);
                 intent.putExtra("min", min);
-
+                intent.putExtra("myroom_id", current_id);
                 startActivity(intent);
             }
         });
