@@ -1,9 +1,7 @@
 package com.example.dku_dow_dpp;
 
-import static android.os.SystemClock.sleep;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -68,7 +66,6 @@ public class CouponListActivity extends AppCompatActivity {
                             // 각 매장별 메뉴와 별점 불러오기
                             for(QueryDocumentSnapshot document:task1.getResult()){
                                 Map<String, Object> couponData = document.getData();
-//                                categoryArray.add(couponData);
                                 if (document.getId().equals("score")) { // 별점 출력
                                     int total = ((Long) Objects.requireNonNull(couponData.get("total"))).intValue();
                                     int people = ((Long) Objects.requireNonNull(couponData.get("people"))).intValue();
@@ -81,7 +78,7 @@ public class CouponListActivity extends AppCompatActivity {
                                     View couponIndexView = LayoutInflater.from(getBaseContext()).inflate(R.layout.coupon_index_layout, null);
                                     Button theCoupon = couponIndexView.findViewById(R.id.menuPrice);
                                     TextView menu = couponIndexView.findViewById(R.id.menu);
-                                    theCoupon.setOnClickListener(view -> couponClick(intentCouponDetail, (HashMap<String, Object>) couponData));
+                                    theCoupon.setOnClickListener(view -> couponClick(intentCouponDetail, name, (HashMap<String, Object>) couponData));
                                     theCoupon.setText("￦ "+Objects.requireNonNull(couponData.get("price")));
                                     menu.setText(Objects.requireNonNull(couponData.get("name")).toString());
                                     linearLayout.addView(couponIndexView);
@@ -129,7 +126,8 @@ public class CouponListActivity extends AppCompatActivity {
         });
     }
 
-    protected void couponClick(Intent intent, Serializable docs){
+    protected void couponClick(Intent intent, String name, Serializable docs){
+        intent.putExtra("brand",name);
         intent.putExtra("coupon",docs);
         startActivity(intent);
         finish();
@@ -138,7 +136,6 @@ public class CouponListActivity extends AppCompatActivity {
     void screenReload(ArrayList<CouponListPerBrand> va){
         finalList.removeAllViews();
         for (CouponListPerBrand clpb: va) {
-            Log.d("TAG", clpb.name);
             finalList.addView(clpb.view);
         }
     }

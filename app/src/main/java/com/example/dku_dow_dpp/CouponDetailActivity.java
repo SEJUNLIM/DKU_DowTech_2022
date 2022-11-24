@@ -6,9 +6,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import org.w3c.dom.Text;
 
@@ -27,11 +32,21 @@ public class CouponDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coupon_detail);
         Intent i = getIntent();
+        ImageView productImage = findViewById(R.id.productImage);
         HashMap<String,Object> docs = (HashMap<String, Object>) i.getSerializableExtra("coupon");
+        String brand = i.getStringExtra("brand");
+        String productName = Objects.requireNonNull(docs.get("name")).toString();
+        String imageInfo = brand + " " + productName + ".jpg";
+        Log.d("IMAGE TAG",imageInfo);
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child(imageInfo);
+        storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
+            Glide.with(CouponDetailActivity.this).load(uri).into(productImage);
+            Log.d("IMAGE TAG","SUCCESS!");
+        });
 
-        Log.d("~~TAG~~",docs.toString());
+
         title = findViewById(R.id.title);
-        title.setText((CharSequence) docs.get("name"));
+        title.setText(brand);
 
         productPrice = findViewById(R.id.productPrice);
         productPrice.setText(Objects.requireNonNull(docs.get("price"))+"원");
