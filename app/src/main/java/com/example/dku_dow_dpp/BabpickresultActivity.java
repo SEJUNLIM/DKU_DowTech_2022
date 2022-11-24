@@ -39,9 +39,6 @@ public class BabpickresultActivity extends AppCompatActivity {
         tv_time = findViewById(R.id.timetext);
         tv_time.setText(time);
 
-        backbtn = findViewById(R.id.button);
-        backbtn.setOnClickListener(view -> onBackPressed());
-
         eng_name = getstr.getStringExtra("eng_name");
         int iResId = getResources().getIdentifier( "@drawable/"+eng_name, "drawable", this.getPackageName() );
         place = findViewById(R.id.place);

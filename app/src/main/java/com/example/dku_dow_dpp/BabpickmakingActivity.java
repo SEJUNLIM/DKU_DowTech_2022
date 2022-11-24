@@ -34,7 +34,6 @@ public class BabpickmakingActivity extends AppCompatActivity {
     ImageButton backbtn;
     TimePicker mTimePicker;
     String name;
-    String eng_name;
     static String current_id;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -64,7 +63,14 @@ public class BabpickmakingActivity extends AppCompatActivity {
         String food = getstr.getStringExtra("food");
 
         backbtn = findViewById(R.id.backbutton);
-        backbtn.setOnClickListener(view -> onBackPressed());
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BabpickmakingActivity.this, MainActivity.class);
+
+                startActivity(intent);
+            }
+        });
         Intent intent = new Intent(BabpickmakingActivity.this, Babpickresult2Activity.class);
 
         intent.putExtra("eng_name", eng_name);
@@ -84,7 +90,13 @@ public class BabpickmakingActivity extends AppCompatActivity {
                 new_matching.put("name", name);
                 new_matching.put("hour", hour);
                 new_matching.put("min", min);
-
+                try
+                {
+                    Thread.sleep(250);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
                 db.collection("babpick").document("식당별").collection(food)
                         .add(new_matching)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
