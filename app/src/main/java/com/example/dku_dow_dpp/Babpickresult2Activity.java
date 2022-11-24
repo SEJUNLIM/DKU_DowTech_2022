@@ -40,7 +40,7 @@ public class Babpickresult2Activity extends AppCompatActivity {
 
     public void onBackPressed() {
         super.onBackPressed();
-        String myroom_id = current_id;
+        String myroom_id = BabpickmakingActivity.current_id;
         DocumentReference productRef = db.collection("babpick").document("식당별").collection(food).document(myroom_id);
 
         if(productRef != null) {
@@ -76,9 +76,6 @@ public class Babpickresult2Activity extends AppCompatActivity {
         int iResId = getResources().getIdentifier( "@drawable/"+eng_name, "drawable", this.getPackageName() );
         place = findViewById(R.id.place);
         place.setImageResource(iResId);
-        
-        backbtn = findViewById(R.id.button);
-        backbtn.setOnClickListener(view -> onBackPressed());
 
         returnbtn = findViewById(R.id.return_btn);
         returnbtn.setOnClickListener(new View.OnClickListener() {
